@@ -1,0 +1,30 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+string getSuitName(int suitNumber) {
+    switch (suitNumber) {
+        case 1:
+            return "пики";
+        case 2:
+            return "трефы";
+        case 3:
+            return "бубны";
+        case 4:
+            return "червы";
+        default:
+            return "Неизвестная масть";
+    }
+}
+
+int main() {
+    int suitNumber;
+    cout << "Введите номер масти (1-4): ";
+    cin >> suitNumber;
+
+    string suitName = getSuitName(suitNumber);
+    cout << "Название масти: " << suitName << endl;
+
+    return 0;
+}
