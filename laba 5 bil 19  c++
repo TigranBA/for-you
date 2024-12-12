@@ -1,0 +1,35 @@
+#include <iostream>
+#include <vector>
+#include <numeric> // для accumulate
+
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Введите количество учеников: ";
+    cin >> n;
+
+    if (n <= 0) {
+        cout << "Количество учеников должно быть больше 0." << endl;
+        return 1; // Ошибка
+    }
+
+    vector<double> heights(n);
+    cout << "Введите рост каждого ученика (через пробел): ";
+    for (int i = 0; i < n; ++i) {
+        cin >> heights[i];
+        if (heights[i] <=0){
+            cout << "Рост должен быть больше 0." << endl;
+            return 1; // Ошибка
+        }
+    }
+
+
+    double sumHeights = accumulate(heights.begin(), heights.end(), 0.0);
+    double averageHeight = sumHeights / n;
+
+    cout << "Средний рост учащихся класса: " << averageHeight << endl;
+
+    return 0;
+}
+
