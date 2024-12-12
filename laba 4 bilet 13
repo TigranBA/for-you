@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int product = 1;
+    bool found = false;
+
+    for (int i = 13; i < 100; i += 13) {
+        if (i % 2 != 0) {
+            product *= i;
+            found = true;
+        }
+    }
+
+    if (found) {
+        cout << "Произведение двузначных нечетных чисел, кратных 13: " << product << endl;
+    } else {
+        cout << "Таких чисел нет." << endl;
+    }
+
+    return 0;
+}
